@@ -1,0 +1,123 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+# Project information
+site_name: AutoNumeric.js
+site_description: Official AutoNumeric documentation
+site_author: Alexandre Bonneau
+site_url: https://docs.autonumeric.org/
+use_directory_urls: true
+
+# Repository information
+repo_url: https://github.com/autoNumeric/autoNumeric/
+repo_name: autoNumeric/autoNumeric
+edit_uri: https://github.com/autoNumeric/autonumeric-docs/tree/master/docs
+copyright: 'Made with ❤ in France'
+
+# Main navigation
+nav:
+  - User documentation:
+    - AutoNumeric documentation: index.md
+    - Try AutoNumeric: Documentation/demo.md
+    - Getting Started:
+      - Installation: Documentation/installation.md
+      - How to use?: Documentation/how to use.md
+      - On which elements can it be used?: Documentation/on which elements can it be used.md
+    - Initialization: Documentation/initialization.md
+    - Options:
+      - Configuration options: Documentation/configuration options.md
+      - Predefined options: Documentation/predefined options.md
+      - Special options: Documentation/special options.md
+      - Updating existing options: Documentation/updating options.md
+    - Methods:
+      - Accessing the methods: Documentation/methods.md
+      - Instantiated methods: Documentation/instantiated methods.md
+      - Static methods: Documentation/static methods.md
+    - Formula mode: Documentation/formula mode.md
+    - Event lifecycle: Documentation/event lifecycle.md
+    - Old versions:
+      - Deprecated documentation: Old documentation/deprecated documentation.md
+      - v1.9 documentation: Old documentation/v1.9 documentation.md
+      - v2.0 documentation: Old documentation/v2.0 documentation.md
+  - Developer guide:
+    - How to contribute?: Developer guide/how to contribute.md
+    - How to upgrade to v4: Developer guide/how to upgrade to v4.md
+    - Dependencies: Developer guide/dependencies.md
+  - Support:
+    - Support: Documentation/support.md
+    - Related projects: Documentation/related projects.md
+    - Older versions: Documentation/older versions.md
+  - Changelog: Changelog/CHANGELOG.md
+  - About:
+    - About: About/about.md
+    - License:
+      - Public license: About/license.md
+      - Documentation: About/documention license.md
+
+
+# Project paths
+docs_dir: docs
+#site_dir: site
+
+
+# Theme configuration
+theme:
+  name: material
+  logo: assets/logo_AutoNumeric_152x152.png
+  favicon: assets/favicon-32x32.png
+  palette:
+  # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  language: en
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    #- navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    #- toc.integrate
+    - navigation.top
+
+extra_css:
+  - stylesheets/extra.css
+
+# MkDocs extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  
+  - def_list
+  - footnotes
+  
+  # Icons
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# Plugins
+#plugins:
+#  - privacy
