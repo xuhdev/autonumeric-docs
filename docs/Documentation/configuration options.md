@@ -11,7 +11,7 @@ Below are listed in alphabetical order the options that you can pass an AutoNume
 
 | Option           | Description | Default Value |
 | :---------------- | :-----------  | :-----------  |
-| `allowDecimalPadding` | Allow padding the decimal places with zeros. If set to `'floats'`, padding is only done when there are some decimals. | `true` |
+| `allowDecimalPadding` | Allow padding the decimal places with zeros. If set to `'floats'`, padding is only done when there are some decimals. If set to an integer, padding will use that number for adding the zeros. | `true` |
 | `alwaysAllowDecimalCharacter` | Defines if the decimal character or decimal character alternative should be accepted when there is already a decimal character shown in the element. | `false` |
 | `caretPositionOnFocus` | Determine where should be positioned the caret on focus | `null` |
 | `createLocalList` | Determine if a local list of AutoNumeric objects must be kept when initializing the elements and others | `true` |
