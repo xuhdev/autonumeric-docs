@@ -32,7 +32,7 @@ Below are listed in alphabetical order the options that you can pass an AutoNume
 | `eventIsCancelable` | Defines if the custom and native events triggered by AutoNumeric should be cancelable | `true` |
 | `failOnUnknownOption ` | This option is the 'strict mode' *(aka 'debug' mode)*, which allows autoNumeric to strictly analyse the options passed, and fails if an unknown options is used in the `options` object. | `false` |
 | `formatOnPageLoad` | Determine if the default value will be formatted on initialization | `true` |
-| `formulaMode` | Defines if the [*formula mode*](#formula-mode) can be activated by the user | `false` |
+| `formulaMode` | Defines if the [*formula mode*](formula mode.md) can be activated by the user | `false` |
 | `historySize` | Determine how many undo states an AutoNumeric object should keep in memory | `20` |
 | `isCancellable` | Determine if the user can *'cancel'* the last modifications done to the element value when using the `Escape` key | `true` |
 | `leadingZero` | Controls the leading zero behavior (possible options are `allow`, `deny` and `keep`) | `'deny'` |

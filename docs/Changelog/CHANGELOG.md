@@ -961,8 +961,8 @@ The highlights of this version are:
 
 #### 2.0.0
 + Release autoNumeric version `2.0.0`, enjoy! (¬‿¬) :tada:
-+ The old options names are being deprecated, and will be removed *soon* ; update your scripts with the [new ones](index.md#options)!
-+ Please be sure to read the updated [readme](index.md) in order to know what else has changed. 
++ The old options names are being deprecated, and will be removed *soon* ; update your scripts with the [new ones](../Documentation/configuration options.md)!
++ Please be sure to read the updated [readme](../index.md) in order to know what else has changed. 
 
 #### 2.0.0-beta.25
 + Fix issue #310 Setup Webdriver.io for end-to-end (e2e) testing
