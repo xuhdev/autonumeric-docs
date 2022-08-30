@@ -11,3 +11,7 @@ This documentation is replacing the *huge* readme in the official [AutoNumeric r
 ## Participate
 
 If you want to clone this repo and edit the docs, you can do it using the Mkdocs installation methods described [here](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker).
+
+## License
+
+You can check the license of this documentation [here](https://github.com/autoNumeric/autonumeric-docs/blob/main/LICENSE.md).
