@@ -27,6 +27,20 @@ anElement.options.allowDecimalPadding(false);
 !!! Success "Hint"
     As soon as the options are modified, the AutoNumeric-managed input content is re-formatted accordingly.
 
+### Updating the options for multiple elements
+
+If you've initialized your input with [`AutoNumeric.multiple()`](initialization.md#initialize-multiple-autonumeric-objects-at-once), you can use the returned Array[^1] to update all the AutoNumeric objects at once:
+```js
+// AutoNumeric initialisation for multiple elements
+const anElements = new AutoNumeric.multiple('.numeric', 42, ['French']);
+
+// Update the options globally for all the inputs with one function call:
+// Modify only a specific element in the array
+anElements[2].update({ decimalPlaces: 3 });
+// or modify all the elements at once
+anElements.forEach(a => a.update({ currencySymbol: '#' })); // or .set(), etc.
+```
+
 ## Resetting options
 
 At any point, you can reset the options by calling the `options.reset()` method.
@@ -39,3 +53,5 @@ Lastly, the option object can be accessed directly, thus allowing to query each 
 ```js title="Access the current options as an object"
 anElement.getSettings(); // Return the options object containing all the current AutoNumeric settings in effect
 ```
+
+[^1]: The `AutoNumeric.multiple()` function will always return an `Array`, even if there is only one element selected.
