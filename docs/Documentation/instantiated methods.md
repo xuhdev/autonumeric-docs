@@ -195,9 +195,18 @@ funcCallback([result1, result2, result3], anElement);
 ## Form functions
 
 AutoNumeric elements provide special functions to manipulate the [form](https://developer.mozilla.org/en-US/docs/Learn/Forms) they are a part of.
-Those special functions really work on the parent `<form>` element, instead of the `<input>` element itself. 
+Those special functions really work on the parent `<form>` element, instead of the `<input>` element itself.
 
-The functions below makes retrieving and sending form values back to the server easily, be it formatted on not.
+Form functions can be divided in two categories:
+
+- Functions that manipulate the form values, and
+- Functions that submit the form values to the server.
+
+### Access and manipulate the form values
+
+The functions below makes retrieving and preparing the form values easy. Those values can be formatted or not, and in any format you would want (`Array`, JSON, string, etc.).
+
+You can then decide how and when to send those form values to the server.
 
 | Method           | Description | Call example |
 | :---------------- | :-----------  | :-----------  |
@@ -218,6 +227,11 @@ The functions below makes retrieving and sending form values back to the server 
 | `formUnformat` | Unformat all the AutoNumeric-managed elements that are a child to the parent <form> element of this `anElement` input, to numeric strings | `anElement.formUnformat();` |
 | `formUnformatLocalized` | Unformat all the AutoNumeric-managed elements that are a child to the parent <form> element of this `anElement` input, to localized strings | `anElement.formUnformatLocalized();` |
 | `formReformat` | Reformat all the AutoNumeric-managed elements that are a child to the parent <form> element of this `anElement` input | `anElement.formReformat();` |
+
+### Submit the form values
+
+Submitting the form values to the server can be done with a single AutoNumeric function call.
+Moreover, the functions below may take a [callback](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function), giving you more control on what to do when submitting data to the server.
 
 The following functions can either take a callback, or not. If they don't, the default `form.submit()` function will be called.
 
