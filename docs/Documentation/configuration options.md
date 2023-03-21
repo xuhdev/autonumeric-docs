@@ -9,9 +9,9 @@ Want to know more? Check out the [examples](http://autonumeric.org/examples).
 
 Below are listed in alphabetical order the options that you can pass an AutoNumeric element, in order to make it change its behavior or formatting specifications.
 
-| Option           | Description | Default Value |
-| :---------------- | :-----------  | :-----------  |
-| `allowDecimalPadding` | Allow padding the decimal places with zeros. If set to `'floats'`, padding is only done when there are some decimals. If set to an integer, padding will use that number for adding the zeros. | `true` |
+| Option | Description | Default Value |
+| :---------------- | :----------- |:--------------------|
+| `allowDecimalPadding` | Allow padding the decimal places with zeros. If set to `'floats'`, padding is only done when there are some decimals (up to the number of decimal places from the `decimalPlaces` variable). If set to an integer, padding will use that number for adding the zeros. If set to `true` it will always pad the decimal places with zeroes, and never if set to `false`. | `true` |
 | `alwaysAllowDecimalCharacter` | Defines if the decimal character or decimal character alternative should be accepted when there is already a decimal character shown in the element. | `false` |
 | `caretPositionOnFocus` | Determine where should be positioned the caret on focus | `null` |
 | `createLocalList` | Determine if a local list of AutoNumeric objects must be kept when initializing the elements and others | `true` |
@@ -25,7 +25,7 @@ Below are listed in alphabetical order the options that you can pass an AutoNume
 | `decimalPlacesShownOnFocus` | The number of decimal places to show when *focused* | `null` |
 | `defaultValueOverride` | Helper option for the ASP.NET-specific postback issue | `null` |
 | `digitalGroupSpacing` | Digital grouping for the thousand separator | `'3'` |
-| `digitGroupSeparator` | Thousand separator character  | `','` |
+| `digitGroupSeparator` | Thousand separator character | `','` |
 | `divisorWhenUnfocused` | Defines the number that will divide the current value shown when unfocused | `null` |
 | `emptyInputBehavior` | Defines what to display when the input value is empty (possible options are `null`, `focus`, `press`, `always`, `min`, `max`, `zero`, number, or a string representing a number) | `'focus'` |
 | `eventBubbles` | Defines if the custom and native events triggered by AutoNumeric should bubble up or not | `true` |
@@ -38,6 +38,7 @@ Below are listed in alphabetical order the options that you can pass an AutoNume
 | `leadingZero` | Controls the leading zero behavior (possible options are `allow`, `deny` and `keep`) | `'deny'` |
 | `maximumValue` | The maximum value that can be entered (10 trillions by default) | `'10000000000000'` |
 | `minimumValue` | The minimum value that can be entered (-10 trillions by default) | `'-10000000000000'` |
+| `modifyValueOnUpDownArrow` | Determine if the element value can be incremented / decremented with the up and down arrow keys. The keys behavior is modified with the `upDownStep` option. | `true` |
 | `modifyValueOnWheel` | Determine if the element value can be incremented / decremented with the mouse wheel. The wheel behavior is modified with the `wheelStep` option. | `true` |
 | `negativeBracketsTypeOnBlur` | Adds brackets `[]`, parenthesis `()`, curly braces `{}`, chevrons `<>`, angle brackets `〈〉`, Japanese quotation marks `｢｣`, half brackets `⸤⸥`, white square brackets `⟦⟧`, quotation marks `‹›` or guillemets `«»` on negative values when unfocused. The value must be formatted like `'<leftBracket>,<rightBracket>'`. | `null` |
 | `negativePositiveSignPlacement` | Placement of negative/positive sign relative to the currency symbol (possible options are `l` (left), `r` (right), `p` (prefix) and `s` (suffix)) | `null` |
@@ -47,12 +48,12 @@ Below are listed in alphabetical order the options that you can pass an AutoNume
 | `outputFormat` | Defines the localized output format of the `getLocalized`, `form*`, `formArray*` and `formJson*` methods | `null` |
 | `overrideMinMaxLimits` | Override minimum and maximum limits (possible options are `ceiling`, `floor`, `ignore` and `invalid`) | `null` |
 | `positiveSignCharacter` | Defines the positive sign character to use (Note: It's only shown if `showPositiveSign` is set to `true`) | `'+'` |
-| `rawValueDivisor` | Define the number that will divide the formatted value into the raw value (ie. when displaying `'1.23%'`, the raw value kept is `0.0123` if `rawValueDivisor` is set to `100`) | `null` |
+| `rawValueDivisor` | Define the number that will divide the formatted value into the raw value (i.e. when displaying `'1.23%'`, the raw value kept is `0.0123` if `rawValueDivisor` is set to `100`) | `null` |
 | `readOnly` | Defines if the element (`<input>` or another allowed html tag) should be set as read-only on initialization | `false` |
 | `roundingMethod` | Method used for rounding. The possible options are:<br>`S` (Round-Half-Up Symmetric (default)),<br>`A` (Round-Half-Up Asymmetric),<br>`s` (Round-Half-Down Symmetric (lower case s)),<br>`a` (Round-Half-Down Asymmetric (lower case a)),<br>`B` (Round-Half-Even 'Bankers Rounding'),<br>`U` (Round Up 'Round-Away-From-Zero'),<br>`D` (Round Down 'Round-Toward-Zero' - same as truncate),<br>`C` (Round to Ceiling 'Toward Positive Infinity'),<br>`F` (Round to Floor 'Toward Negative Infinity'),<br>`N05` (Rounds to the nearest .05 (same as `'CHF'` used in v1.9.* and still valid)),<br>`U05` (Rounds up to next .05),<br>`D05` (Rounds down to next .05) | `'S'` |
 | `saveValueToSessionStorage` | Allow the `decimalPlacesShownOnFocus` value to be saved into session storage | `false` |
 | `selectNumberOnly` | Determine if the 'Select All' keyboard command will select the complete input text content (including the currency symbol and suffix text), or only the input numeric value | `false` |
-| `selectOnFocus` | Defines if the element value should be selected on focus. That selection is dependant on the `selectNumberOnly` option value. | `true` |
+| `selectOnFocus` | Defines if the element value should be selected on focus. That selection is dependent on the `selectNumberOnly` option value. | `true` |
 | `serializeSpaces` | Defines how the serialize functions should treat spaces when serializing (convert them to `'%20'` or `'+'`) | `'+'` |
 | `showOnlyNumbersOnFocus` | Remove the thousand separator, currency symbol and suffix on focus | `false` |
 | `showPositiveSign` | Allow the positive sign symbol `+` to be displayed for positive numbers | `false` |
@@ -62,7 +63,8 @@ Below are listed in alphabetical order the options that you can pass an AutoNume
 | `symbolWhenUnfocused` | Symbol placed as a suffix when unfocused. This is used in combination with the `divisorWhenUnfocused` option. | `null` |
 | `unformatOnHover` | Defines if the element value should be unformatted when the user hover his mouse over it while holding the `Alt` key | `true` |
 | `unformatOnSubmit` | Removes formatting on submit event | `false` |
+| `upDownStep` | Used in conjonction with the `modifyValueOnUpDownArrow` option, this allows to either define a *fixed* step (i.e. `1000`), or a *progressive* one that is calculated based on the size of the current value | `'1'` |
 | `valuesToStrings` | Provide a way for automatically and transparently replacing the formatted value with a pre-defined string, when the raw value is equal to a specific value.<br>For instance when using `{ 0: '-' }`, the hyphen `'-'` is displayed when the `rawValue` is equal to `0`. Multiple 'replacements' can be defined. | `null` |
 | `watchExternalChanges` | Defines if the AutoNumeric element should watch (and format) external changes made without using `.set()`. This is set to `false` by default to prevent infinite loops when used with third party frameworks that relies on the `'autoNumeric:rawValueModified'` events being sent. | `false` |
 | `wheelOn` | Used in conjonction with the `modifyValueOnWheel` option, defines when the wheel event will increment or decrement the element value, either when the element is focused, or hovered | `'focus'` |
-| `wheelStep` | Used in conjonction with the `modifyValueOnWheel` option, this allow to either define a *fixed* step (ie. `1000`), or a *progressive* one that is calculated based on the size of the current value | `'progressive'` |
+| `wheelStep` | Used in conjonction with the `modifyValueOnWheel` option, this allows to either define a *fixed* step (i.e. `1000`), or a *progressive* one that is calculated based on the size of the current value | `'progressive'` |

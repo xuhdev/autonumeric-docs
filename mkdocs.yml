@@ -16,7 +16,7 @@ copyright: 'Made with ❤ in France'
 # Main navigation
 nav:
   - User documentation:
-    - AutoNumeric documentation: index.md
+    - AutoNumeric.js documentation: index.md
     - Try AutoNumeric: Documentation/demo.md
     - Getting Started:
       - Installation: Documentation/installation.md

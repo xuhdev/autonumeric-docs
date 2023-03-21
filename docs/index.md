@@ -62,30 +62,31 @@ The mobile Android Chrome browser is partially supported.
 - The settings can easily be changed at *any* time using the `update` method or via a callback
 - AutoNumeric supports `input` elements as well as most text elements with the `contenteditable` attribute, allowing you to place formatted numbers and currencies on just about any part of your pages
 - AutoNumeric elements *can be linked together* allowing you to perform one action on multiple elements at once
-- 8 pre-defined [currency options](Documentation/predefined options.md#predefined-language-options) as well as 33 [common options](Documentation/predefined options.md#predefined-common-options) allows you to directly use AutoNumeric by skipping the option configuration step
+- 8 [pre-defined currency options](Documentation/predefined options.md#predefined-language-options) as well as 33 [pre-defined common options](Documentation/predefined options.md#predefined-common-options) allows you to directly use AutoNumeric by skipping the option configuration step
 - 26 built-in [methods](Documentation/methods.md) gives you the flexibility needed to use AutoNumeric to its full potential
-- 22 [global methods](Documentation/instantiated methods.md#perform-actions-globally-on-a-shared-init-list-of-autonumeric-elements) that allows to control sets of AutoNumeric-managed elements at once
+- 22 [global methods](Documentation/instantiated methods.md#perform-actions-globally-on-a-shared-init-list-of-autonumeric-elements) that allows to control *sets* of AutoNumeric-managed elements at once
 - 21 additional [methods](Documentation/instantiated methods.md#form-functions) specialized for managing form management and submission
 - A [formula mode](Documentation/formula mode.md) that allows to quickly enter and evaluate math expressions inside the element
-- 17 [static functions](Documentation/static methods.md) provided by the `AutoNumeric` class
-- And more than 50 [options](Documentation/configuration options.md) allowing you to precisely customize your currency format and behavior
+- 17 [static functions](Documentation/static methods.md) provided by the `AutoNumeric` class, which can be used in Web Workers
+- And more than 50 [options](Documentation/configuration options.md) allowing you to precisely customize your number and currency format and behavior
 
 With that said, AutoNumeric supports most international numeric formats and currencies including those used in Europe, Asia, and North and South America.
 
 ## Try AutoNumeric!
 
-If you want to try AutoNumeric, please check the [demo](Documentation/demo.md) page.
+If you want to try AutoNumeric, please check the [demo](Documentation/demo.md) page.<br>
+There, you'll also have links to the additional AutoNumeric tools.
 
 ## Which version should I use?
 
-The latest stable branch is always on `master`. Currently this is version [4.2.*](https://github.com/autoNumeric/autoNumeric/tree/master).
+The latest stable branch is always on `master`. Currently this is version [4.6.*](https://github.com/autoNumeric/autoNumeric/tree/master).
 
-However most of the development in done on the `next` [branch](https://github.com/autoNumeric/autoNumeric/tree/next), with `master` being updated sparsely.
+However, most of the development in done on the `next` [branch](https://github.com/autoNumeric/autoNumeric/tree/next), with `master` being updated sparsely.
 
 If you want to try the new features, you can check out the latest development version in the `next` [branch](https://github.com/autoNumeric/autoNumeric/tree/next). That branch can see changes in the API (check the [semver](http://semver.org/)), however it's still very stable and bug-free (as far as we know) since it's always fully tested for regressions.
 
 !!! tip
-    `next` is the preferred branch to use in production. Use `master` only if you do not need fixes quickly.
+    `next` is the preferred branch to use in production. Use `master` only if you do not need fixes quickly and are prepared to wait a few years between releases.
 
 ### Older versions (v1.9 and v2)
 

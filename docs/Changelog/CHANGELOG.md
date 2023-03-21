@@ -2,6 +2,51 @@
 
 ### v4
 
+#### 4.7.0
++ Fixes #719 Feature request: Up and down arrow keys behavior matching standard number input
++ Adds 2 new options to control how the up and down arrow keys behave: `modifyValueOnUpDownArrow` and `upDownStep`
+
+#### 4.6.3
++ Fixes #721 AutoNumeric.set() breaks internal state when string-value has leading or trailing whitespace
++ Fixes all the remaining end-to-end tests with the latest Webdriver.io version
++ Removes the remnants of PhantomJS hacks (#384)
++ Updates the Travis CI configuration
++ Fixes the caret positioning in some specific cases
++ Fixes the lint issues in the wdio config file
++ Fixes the webpack production config to correctly generate gzipped dist files
+
+#### 4.6.2
++ Fixes issue #757 Converted scientific numbers returns NaN when using `formArrayNumericString()`
++ Fixes warning messages in the IDE
+
+#### 4.6.1
++ Updates all the dependencies
++ Removes the PhantomJS dependency in favor of Puppeteer
++ Fixes and cleans the Karma configuration files to support v6.4.1
++ Fixes and cleans the Webpack configuration files to support v5.75.0
++ Fixes the failing unit tests on the `validate()` function for the `allowDecimalPadding` option
++ Updates the Webdriverio configuration to v8
++ Updates the Webdriver end-to-end tests to v8, i.e. removing the `@wdio/sync` package in favor of using async/await everywhere, and updating all the `keys()` calls to use the Webdriver `Key` object, and arrays of individual characters
++ Adds unit tests for feature request #741
++ Completes the `validate()` function with additional tests for the new `allowDecimalPadding` option as a number
++ Fixes #761 Undo and redo actions are done twice, on Z and Control KeyUp events
++ Fixes missing variable update in #739 (`this.onGoingRedo`)
++ Fixes the warning message when a faulty `styleRules` callback is passed as a parameter
++ Fixes typos and grammar in comments
++ Fixes #734 Fire change event onBlur only if number is changed (#735)
++ Fixes #753 Correct invalid JS imports
++ Fixes #758 Adding missing predefined options to typescript interface file
++ Update the readme with the new documentation website
++ Fixes #739 Add CTRL+Y shortcut for redo
++ Fixes the currency symbol for Brazilian real
++ Fixes #697 Currency can be deleted (#725)
++ Updates the README related to PR #742
++ Fixes #741 + Ability to set a numeric allowDecimalPadding (#742)
++ Adds default export to modules (#747)
++ Fixes #737 Undo/redo not firing input event
++ Fixes #684 Caret always set far right when deleting or inserting numbers using $ (#716)
++ Fixes unit tests following the changes in `v4.6.0`
+
 #### 4.6.0
 + Adds a new option `invalidClass`, which default to `an-invalid`, that defines the CSS class name to use when a contenteditable-enabled element value is invalid
 + Adds a new option value `'invalid'` for the `overrideMinMaxLimits` option, that will allow users to enter out-of-bound numbers

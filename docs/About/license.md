@@ -4,7 +4,7 @@ AutoNumeric is an [MIT](http://opensource.org/licenses/MIT)-licensed open source
 
 ## MIT License
 
-Copyright © 2016-2022 Alexandre Bonneau <alexandre.bonneau@linuxfr.eu> and contributors<br>
+Copyright © 2016-2023 Alexandre Bonneau <alexandre.bonneau@linuxfr.eu> and contributors<br>
 Copyright © 2009-2016 Robert J. Knothe <bob@decorplanit.com> and contributors
 
 

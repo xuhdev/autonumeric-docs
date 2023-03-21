@@ -2,7 +2,7 @@
 
 The official documentation for [AutoNumeric](https://github.com/autoNumeric/autoNumeric/) is stored in this repository.
 
-This documentation is replacing the *huge* readme in the official [AutoNumeric repository](https://github.com/autoNumeric/autoNumeric/), and complete the website [http://autonumeric.org](http://autonumeric.org) where additional tools can be found.
+This documentation is replacing the previously *huge* readme in the official [AutoNumeric repository](https://github.com/autoNumeric/autoNumeric/), and complete the website [http://autonumeric.org](http://autonumeric.org) where additional tools can be found.
 
 ## Technology
 
