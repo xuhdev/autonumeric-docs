@@ -1,4 +1,4 @@
-You can install autoNumeric with your preferred dependency manager:
+You can install AutoNumeric with your preferred dependency manager:
 
 === "Latest version"
     ```sh title="With `yarn`"
@@ -10,10 +10,10 @@ You can install autoNumeric with your preferred dependency manager:
 
 === "Stable version"
     ```sh title="With `yarn`"
-    yarn add autonumeric@4.2.0
+    yarn add autonumeric@4.6.2
     ```
     ```sh title="With `npm`"
-    npm install autonumeric@4.2.0 --save
+    npm install autonumeric@4.6.2 --save
     ```
 
 [^1]: [Yarn](https://yarnpkg.com/) website

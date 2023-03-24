@@ -4,9 +4,12 @@ Simply include **autoNumeric** in your html `<header>` tag.<br>No other files or
 ```html
 <script src="autoNumeric.min.js" type="text/javascript"></script>
 <!-- ...or, you may also directly use a CDN :-->
-<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.8.1"></script>
+<!-- ...or -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/4.8.1/autoNumeric.min.js"></script>
 <!-- ...or -->
 <script src="https://unpkg.com/autonumeric"></script>
+<!-- ...or any other CDN. -->
 ```
 
 ## In another script

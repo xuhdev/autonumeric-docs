@@ -41,6 +41,7 @@ Below are listed in alphabetical order the options that you can pass an AutoNume
 | `modifyValueOnUpDownArrow` | Determine if the element value can be incremented / decremented with the up and down arrow keys. The keys behavior is modified with the `upDownStep` option. | `true` |
 | `modifyValueOnWheel` | Determine if the element value can be incremented / decremented with the mouse wheel. The wheel behavior is modified with the `wheelStep` option. | `true` |
 | `negativeBracketsTypeOnBlur` | Adds brackets `[]`, parenthesis `()`, curly braces `{}`, chevrons `<>`, angle brackets `〈〉`, Japanese quotation marks `｢｣`, half brackets `⸤⸥`, white square brackets `⟦⟧`, quotation marks `‹›` or guillemets `«»` on negative values when unfocused. The value must be formatted like `'<leftBracket>,<rightBracket>'`. | `null` |
+| `negativePositiveSignBehavior` | Defines if the negative sign should be toggled when hitting the negative or positive key multiple times | `false` |
 | `negativePositiveSignPlacement` | Placement of negative/positive sign relative to the currency symbol (possible options are `l` (left), `r` (right), `p` (prefix) and `s` (suffix)) | `null` |
 | `negativeSignCharacter` | Defines the negative sign character to use | `'-'` |
 | `noEventListeners` | Defines if the element should have event listeners activated on it.<br>*Note: Setting this to `true` will prevent any format to be applied once the user starts modifying the element value. This is unlikely what you want.* | `false` |
