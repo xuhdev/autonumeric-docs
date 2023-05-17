@@ -1,0 +1,1519 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official AutoNumeric documentation">
+      
+      
+        <meta name="author" content="Alexandre Bonneau">
+      
+      
+        <link rel="canonical" href="https://docs.autonumeric.org/Developer%20guide/how%20to%20upgrade%20to%20v4/">
+      
+      
+        <link rel="prev" href="../how%20to%20contribute/">
+      
+      
+        <link rel="next" href="../dependencies/">
+      
+      <link rel="icon" href="../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>How to upgrade to v4 - AutoNumeric.js</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#upgrade-from-versions-192-to-version-4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AutoNumeric.js" class="md-header__button md-logo" aria-label="AutoNumeric.js" data-md-component="logo">
+      
+  <img src="../../assets/logo_AutoNumeric_152x152.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AutoNumeric.js
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to upgrade to v4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/autoNumeric/autoNumeric/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    autoNumeric/autoNumeric
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        User documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../how%20to%20contribute/" class="md-tabs__link md-tabs__link--active">
+        Developer guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Documentation/support/" class="md-tabs__link">
+        Support
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../Changelog/CHANGELOG/" class="md-tabs__link">
+      Changelog
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../About/about/" class="md-tabs__link">
+        About
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AutoNumeric.js" class="md-nav__button md-logo" aria-label="AutoNumeric.js" data-md-component="logo">
+      
+  <img src="../../assets/logo_AutoNumeric_152x152.png" alt="logo">
+
+    </a>
+    AutoNumeric.js
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/autoNumeric/autoNumeric/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    autoNumeric/autoNumeric
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          User documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          User documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        AutoNumeric.js documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/demo/" class="md-nav__link">
+        Try AutoNumeric
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/how%20to%20use/" class="md-nav__link">
+        How to use?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/on%20which%20elements%20can%20it%20be%20used/" class="md-nav__link">
+        On which elements can it be used?
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/initialization/" class="md-nav__link">
+        Initialization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          Options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Options
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/configuration%20options/" class="md-nav__link">
+        Configuration options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/predefined%20options/" class="md-nav__link">
+        Predefined options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/special%20options/" class="md-nav__link">
+        Special options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/updating%20options/" class="md-nav__link">
+        Updating existing options
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+          Methods
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Methods
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/methods/" class="md-nav__link">
+        Accessing the methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/instantiated%20methods/" class="md-nav__link">
+        Instantiated methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/static%20methods/" class="md-nav__link">
+        Static methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/formula%20mode/" class="md-nav__link">
+        Formula mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/event%20lifecycle/" class="md-nav__link">
+        Event lifecycle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+          Old versions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_9">
+          <span class="md-nav__icon md-icon"></span>
+          Old versions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Old%20documentation/deprecated%20documentation/" class="md-nav__link">
+        Deprecated documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Old%20documentation/v1.9%20documentation/" class="md-nav__link">
+        v1.9 documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Old%20documentation/v2.0%20documentation/" class="md-nav__link">
+        v2.0 documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Developer guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Developer guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how%20to%20contribute/" class="md-nav__link">
+        How to contribute?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          How to upgrade to v4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        How to upgrade to v4
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-from-versions-192-to-version-4" class="md-nav__link">
+    Upgrade from versions 1.9.*/2.* to version 4.*
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade from versions 1.9.*/2.* to version 4.*">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-calls" class="md-nav__link">
+    Method calls
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    Need help?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependencies/" class="md-nav__link">
+        Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/related%20projects/" class="md-nav__link">
+        Related projects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/older%20versions/" class="md-nav__link">
+        Older versions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Changelog/CHANGELOG/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          License
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          License
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/license/" class="md-nav__link">
+        Public license
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/documention%20license/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-from-versions-192-to-version-4" class="md-nav__link">
+    Upgrade from versions 1.9.*/2.* to version 4.*
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade from versions 1.9.*/2.* to version 4.*">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-calls" class="md-nav__link">
+    Method calls
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    Need help?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>How to upgrade to v4</h1>
+
+<h2 id="upgrade-from-versions-192-to-version-4">Upgrade from versions <a href="https://github.com/autoNumeric/autoNumeric/releases/tag/1.9.46"><code>1.9.*</code></a>/<a href="https://github.com/autoNumeric/autoNumeric/releases/tag/v2.0.13"><code>2.*</code></a> to version <a href="https://github.com/autoNumeric/autoNumeric/tree/v4.6.0"><code>4.*</code></a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention!</p>
+<p>Version <code>4</code> has seen a <a href="https://github.com/autoNumeric/autoNumeric/releases/tag/v4.0.0">lots of improvements and new features</a>, but also introduce breaking changes if you are trying to use it with an old <code>v1.9</code> or <code>v2</code> configuration.</p>
+</div>
+<h3 id="initialization">Initialization</h3>
+<p>Initialization of an AutoNumeric object <a href="https://github.com/autoNumeric/autoNumeric/#initialization">has changed</a> a bit.</p>
+<p>Since AutoNumeric is now an ES6 module, <em><code>AutoNumeric</code> being the name of the <code>class</code></em>, and since <strong><em>the <a href="../dependencies/">jQuery dependency</a> has been dropped</em></strong>, you now longer need to first select the DOM element with jQuery, then call the <code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">yourElement</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">})</span></code> method.</p>
+<p>Now, you only need to instantiate an <code>AutoNumeric</code> object using <code class="highlight"><span class="ow">new</span><span class="w"> </span><span class="nx">AutoNumeric</span><span class="p">(</span><span class="nx">yourElement</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">})</span></code> (or if you do not already have a reference to the DOM element, use <code class="highlight"><span class="ow">new</span><span class="w"> </span><span class="nx">AutoNumeric</span><span class="p">(</span><span class="s1">&#39;myCSSSelector&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">})</span></code>).</p>
+<table>
+<thead>
+<tr>
+<th align="left">&lt;= <code>v2</code> (Before)</th>
+<th align="left"><code>v4</code> (After)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.myInput&#39;</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+<td align="left">If you want to initialize <a href="https://github.com/autoNumeric/autoNumeric/#initialize-one-autonumeric-object">only one element</a>: <code class="highlight"><span class="ow">new</span><span class="w"> </span><span class="nx">AutoNumeric</span><span class="p">(</span><span class="s1">&#39;.myInput&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">If you want to initialize <a href="https://github.com/autoNumeric/autoNumeric/#initialize-multiple-autonumeric-objects-at-once">multiple elements</a>: <code class="highlight"><span class="nx">AutoNumeric</span><span class="p">.</span><span class="nx">multiple</span><span class="p">(</span><span class="s1">&#39;.myCssClass &gt; input&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration">Configuration</h3>
+<div class="admonition warning">
+<p class="admonition-title">Deprecation warning</p>
+<p>The old option names have changed and are now <em>deprecated</em>, in favor of the <a href="https://github.com/autoNumeric/autoNumeric/#options">new ones</a>.</p>
+</div>
+<p>To help you switch to the new names, detailed warning messages are displayed in the console if an old option name is detected.</p>
+<div class="admonition info">
+<p class="admonition-title"><code>mDec</code> option changes</p>
+<p>Do note that the option <code>mDec</code> (or its new name <code>decimalPlacesOverride</code> if you used <code>v2</code>) <strong>is no longer used</strong>.</p>
+<p>If you want to specify the number of decimals, instead of relying on the maximum number of decimal places in <code>minimumValue</code> or <code>maximumValue</code> like before, you can now set <code>decimalPlaces</code> to set it globally.</p>
+<p>If you wish, you can also specify a different number of decimal places for the formatted value (with <code>decimalPlacesShownOnFocus</code> and <code>decimalPlacesShownOnFocus</code>) or the <code>rawValue</code> (with <code>decimalPlacesRawValue</code>).</p>
+</div>
+<p>The following table shows the equilavence between pre and post <code>v4</code> version for option names:</p>
+<table>
+<thead>
+<tr>
+<th align="left">&lt;= <code>v2</code> (Before)</th>
+<th align="left"><code>v4</code> (After)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>aSep</code></td>
+<td align="left"><code>digitGroupSeparator</code></td>
+</tr>
+<tr>
+<td align="left"><code>nSep</code></td>
+<td align="left"><code>showOnlyNumbersOnFocus</code></td>
+</tr>
+<tr>
+<td align="left"><code>dGroup</code></td>
+<td align="left"><code>digitalGroupSpacing</code></td>
+</tr>
+<tr>
+<td align="left"><code>aDec</code></td>
+<td align="left"><code>decimalCharacter</code></td>
+</tr>
+<tr>
+<td align="left"><code>altDec</code></td>
+<td align="left"><code>decimalCharacterAlternative</code></td>
+</tr>
+<tr>
+<td align="left"><code>aSign</code></td>
+<td align="left"><code>currencySymbol</code></td>
+</tr>
+<tr>
+<td align="left"><code>pSign</code></td>
+<td align="left"><code>currencySymbolPlacement</code></td>
+</tr>
+<tr>
+<td align="left"><code>pNeg</code></td>
+<td align="left"><code>negativePositiveSignPlacement</code></td>
+</tr>
+<tr>
+<td align="left"><code>aSuffix</code></td>
+<td align="left"><code>suffixText</code></td>
+</tr>
+<tr>
+<td align="left"><code>oLimits</code></td>
+<td align="left"><code>overrideMinMaxLimits</code></td>
+</tr>
+<tr>
+<td align="left"><code>vMax</code></td>
+<td align="left"><code>maximumValue</code></td>
+</tr>
+<tr>
+<td align="left"><code>vMin</code></td>
+<td align="left"><code>minimumValue</code></td>
+</tr>
+<tr>
+<td align="left"><code>mDec</code></td>
+<td align="left"><code>decimalPlacesOverride</code><br>(<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:" /> Deprecated)</td>
+</tr>
+<tr>
+<td align="left"><code>eDec</code></td>
+<td align="left"><code>decimalPlacesShownOnFocus</code></td>
+</tr>
+<tr>
+<td align="left"><code>scaleDecimal</code></td>
+<td align="left"><code>decimalPlacesShownOnBlur</code></td>
+</tr>
+<tr>
+<td align="left"><code>aStor</code></td>
+<td align="left"><code>saveValueToSessionStorage</code></td>
+</tr>
+<tr>
+<td align="left"><code>mRound</code></td>
+<td align="left"><code>roundingMethod</code></td>
+</tr>
+<tr>
+<td align="left"><code>aPad</code></td>
+<td align="left"><code>allowDecimalPadding</code></td>
+</tr>
+<tr>
+<td align="left"><code>nBracket</code></td>
+<td align="left"><code>negativeBracketsTypeOnBlur</code></td>
+</tr>
+<tr>
+<td align="left"><code>wEmpty</code></td>
+<td align="left"><code>emptyInputBehavior</code></td>
+</tr>
+<tr>
+<td align="left"><code>lZero</code></td>
+<td align="left"><code>leadingZero</code></td>
+</tr>
+<tr>
+<td align="left"><code>aForm</code></td>
+<td align="left"><code>formatOnPageLoad</code></td>
+</tr>
+<tr>
+<td align="left"><code>sNumber</code></td>
+<td align="left"><code>selectNumberOnly</code></td>
+</tr>
+<tr>
+<td align="left"><code>anDefault</code></td>
+<td align="left"><code>defaultValueOverride</code></td>
+</tr>
+<tr>
+<td align="left"><code>unSetOnSubmit</code></td>
+<td align="left"><code>unformatOnSubmit</code></td>
+</tr>
+<tr>
+<td align="left"><code>outputType</code></td>
+<td align="left"><code>outputFormat</code></td>
+</tr>
+<tr>
+<td align="left"><code>debug</code></td>
+<td align="left"><code>showWarnings</code></td>
+</tr>
+</tbody>
+</table>
+<p>If you want more detail about the AutoNumeric options, feel free to browse the <a href="https://github.com/autoNumeric/autoNumeric/blob/master/src/AutoNumericOptions.js">AutoNumeric options source code</a> which has detailed comment for each one.</p>
+<details class="info" open="open">
+<summary>Interactive option testing chamber</summary>
+<p>Do note that you can check out the new options on the official website <a href="http://autonumeric.org/guide">here</a>.</p>
+</details>
+<h3 id="method-calls">Method calls</h3>
+<p>Moreover, since we are now using an <code>AutoNumeric</code> object, we can now directly call its <a href="../../Documentation/methods">methods</a> (and <a href="../../Documentation/instantiated methods#function-chaining">chain</a> them if needed).<br> 
+In the following table, the <code>anElement</code> variable is created using <code class="highlight"><span class="kd">const</span><span class="w"> </span><span class="nx">anElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AutoNumeric</span><span class="p">(</span><span class="s1">&#39;someSelector&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">})</span></code>.</p>
+<p>The methods are now called like so:</p>
+<table>
+<thead>
+<tr>
+<th align="left">&lt;= <code>v2</code> (Before)</th>
+<th align="left"><code>v4</code> (After)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoFormat</span><span class="p">(</span><span class="s1">&#39;1234.56&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">AutoNumeric</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoUnFormat</span><span class="p">(</span><span class="s1">&#39;1.234,56 €&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">AutoNumeric</span><span class="p">.</span><span class="nx">unformat</span><span class="p">(</span><span class="s1">&#39;1.234,56 €&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoValidate</span><span class="p">({</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">AutoNumeric</span><span class="p">.</span><span class="nx">validate</span><span class="p">({</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">})</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">autoNumeric</span><span class="p">.</span><span class="nx">defaults</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">AutoNumeric</span><span class="p">.</span><span class="nx">getDefaultConfig</span><span class="p">()</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s2">&quot;destroy&quot;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">getNumericString</span><span class="p">();</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;getArray&#39;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">formArrayNumericString</span><span class="p">();</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;getFormatted&#39;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">getFormatted</span><span class="p">();</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;getLocalized&#39;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">getLocalized</span><span class="p">();</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;getNumber&#39;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">getNumber</span><span class="p">();</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;getString&#39;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">formNumericString</span><span class="p">();</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">autoNumeric</span><span class="p">.</span><span class="nx">lang</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">AutoNumeric</span><span class="p">.</span><span class="nx">getPredefinedOptions</span><span class="p">()</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;reSet&#39;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">reformat</span><span class="p">();</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;set&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;12345.67&#39;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">12345.67</span><span class="p">);</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s1">&#39;unSet&#39;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">unformat</span><span class="p">();</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s2">&quot;update&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span></code></td>
+</tr>
+<tr>
+<td align="left"><code class="highlight"><span class="nx">$</span><span class="p">(</span><span class="nx">someSelector</span><span class="p">).</span><span class="nx">autoNumeric</span><span class="p">(</span><span class="s2">&quot;wipe&quot;</span><span class="p">);</span></code></td>
+<td align="left"><code class="highlight"><span class="nx">anElement</span><span class="p">.</span><span class="nx">wipe</span><span class="p">();</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Check the <a href="../../Documentation/methods">methods documentation</a> to see how some of those functions signatures changed.</p>
+<h2 id="need-help">Need help?</h2>
+<p>If you encounter any problem upgrading to <code>v4</code>, feel free to contacts us on our <a href="https://gitter.im/autoNumeric/autoNumeric">Gitter channel</a> or on IRC on Libera Chat <code>#autoNumeric</code>!</p>
+<p>Please check the <a href="../../Documentation/support">contact page</a> for more information.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Made with ❤ in France
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>

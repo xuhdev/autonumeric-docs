@@ -1,0 +1,1509 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official AutoNumeric documentation">
+      
+      
+        <meta name="author" content="Alexandre Bonneau">
+      
+      
+        <link rel="canonical" href="https://docs.autonumeric.org/Documentation/configuration%20options/">
+      
+      
+        <link rel="prev" href="../initialization/">
+      
+      
+        <link rel="next" href="../predefined%20options/">
+      
+      <link rel="icon" href="../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>Configuration options - AutoNumeric.js</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#options" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AutoNumeric.js" class="md-header__button md-logo" aria-label="AutoNumeric.js" data-md-component="logo">
+      
+  <img src="../../assets/logo_AutoNumeric_152x152.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AutoNumeric.js
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration options
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/autoNumeric/autoNumeric/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    autoNumeric/autoNumeric
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        User documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Developer%20guide/how%20to%20contribute/" class="md-tabs__link">
+        Developer guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../support/" class="md-tabs__link">
+        Support
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../Changelog/CHANGELOG/" class="md-tabs__link">
+      Changelog
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../About/about/" class="md-tabs__link">
+        About
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AutoNumeric.js" class="md-nav__button md-logo" aria-label="AutoNumeric.js" data-md-component="logo">
+      
+  <img src="../../assets/logo_AutoNumeric_152x152.png" alt="logo">
+
+    </a>
+    AutoNumeric.js
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/autoNumeric/autoNumeric/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    autoNumeric/autoNumeric
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          User documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          User documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        AutoNumeric.js documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo/" class="md-nav__link">
+        Try AutoNumeric
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how%20to%20use/" class="md-nav__link">
+        How to use?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../on%20which%20elements%20can%20it%20be%20used/" class="md-nav__link">
+        On which elements can it be used?
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../initialization/" class="md-nav__link">
+        Initialization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          Options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Options
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configuration options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Configuration options
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../predefined%20options/" class="md-nav__link">
+        Predefined options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../special%20options/" class="md-nav__link">
+        Special options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updating%20options/" class="md-nav__link">
+        Updating existing options
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+          Methods
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Methods
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methods/" class="md-nav__link">
+        Accessing the methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instantiated%20methods/" class="md-nav__link">
+        Instantiated methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static%20methods/" class="md-nav__link">
+        Static methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formula%20mode/" class="md-nav__link">
+        Formula mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event%20lifecycle/" class="md-nav__link">
+        Event lifecycle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+          Old versions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_9">
+          <span class="md-nav__icon md-icon"></span>
+          Old versions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Old%20documentation/deprecated%20documentation/" class="md-nav__link">
+        Deprecated documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Old%20documentation/v1.9%20documentation/" class="md-nav__link">
+        v1.9 documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Old%20documentation/v2.0%20documentation/" class="md-nav__link">
+        v2.0 documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Developer guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Developer guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer%20guide/how%20to%20contribute/" class="md-nav__link">
+        How to contribute?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer%20guide/how%20to%20upgrade%20to%20v4/" class="md-nav__link">
+        How to upgrade to v4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer%20guide/dependencies/" class="md-nav__link">
+        Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../related%20projects/" class="md-nav__link">
+        Related projects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../older%20versions/" class="md-nav__link">
+        Older versions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Changelog/CHANGELOG/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          License
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          License
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/license/" class="md-nav__link">
+        Public license
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/documention%20license/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Configuration options</h1>
+
+<p>Multiple configuration options allows you to customize precisely how a form <code>&lt;input&gt;</code> element will format your key strokes as you type.<br>
+You can check what are the predefined choices for each option as well as a more detailed explanation of how they work on the <a href="http://autonumeric.org/guide">official documentation page</a>.</p>
+<p>You can also generate your custom options object and try those live with the <a href="http://autonumeric.org/configurator">AutoNumeric configurator</a>.</p>
+<p>Want to know more? Check out the <a href="http://autonumeric.org/examples">examples</a>.</p>
+<h2 id="options">Options</h2>
+<p>Below are listed in alphabetical order the options that you can pass an AutoNumeric element, in order to make it change its behavior or formatting specifications.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Description</th>
+<th align="left">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>allowDecimalPadding</code></td>
+<td align="left">Allow padding the decimal places with zeros. If set to <code>'floats'</code>, padding is only done when there are some decimals (up to the number of decimal places from the <code>decimalPlaces</code> variable). If set to an integer, padding will use that number for adding the zeros. If set to <code>true</code> it will always pad the decimal places with zeroes, and never if set to <code>false</code>.</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>alwaysAllowDecimalCharacter</code></td>
+<td align="left">Defines if the decimal character or decimal character alternative should be accepted when there is already a decimal character shown in the element.</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>caretPositionOnFocus</code></td>
+<td align="left">Determine where should be positioned the caret on focus</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>createLocalList</code></td>
+<td align="left">Determine if a local list of AutoNumeric objects must be kept when initializing the elements and others</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>currencySymbol</code></td>
+<td align="left">Defines the currency symbol to display</td>
+<td align="left"><code>''</code></td>
+</tr>
+<tr>
+<td align="left"><code>currencySymbolPlacement</code></td>
+<td align="left">Placement of the currency sign, relative to the number shown (as a prefix or a suffix)</td>
+<td align="left"><code>'p'</code></td>
+</tr>
+<tr>
+<td align="left"><code>decimalCharacter</code></td>
+<td align="left">Decimal separator character</td>
+<td align="left"><code>'.'</code></td>
+</tr>
+<tr>
+<td align="left"><code>decimalCharacterAlternative</code></td>
+<td align="left">Allow to declare an alternative decimal separator which is automatically replaced by the <em>real</em> decimal character when entered (This is useful in countries where the keyboard numeric pad has a period as the decimal character)</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>decimalPlaces</code></td>
+<td align="left">Defines the default number of decimal places to show on the formatted value, and to keep as the precision for the <code>rawValue</code>. This can be overridden by the other <code>decimalPlaces*</code> options.</td>
+<td align="left"><code>2</code></td>
+</tr>
+<tr>
+<td align="left"><code>decimalPlacesRawValue</code></td>
+<td align="left">Defines how many decimal places should be kept for the raw value. This is the precision for float values.</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>decimalPlacesShownOnBlur</code></td>
+<td align="left">The number of decimal places to show when <em>unfocused</em></td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>decimalPlacesShownOnFocus</code></td>
+<td align="left">The number of decimal places to show when <em>focused</em></td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>defaultValueOverride</code></td>
+<td align="left">Helper option for the ASP.NET-specific postback issue</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>digitalGroupSpacing</code></td>
+<td align="left">Digital grouping for the thousand separator</td>
+<td align="left"><code>'3'</code></td>
+</tr>
+<tr>
+<td align="left"><code>digitGroupSeparator</code></td>
+<td align="left">Thousand separator character</td>
+<td align="left"><code>','</code></td>
+</tr>
+<tr>
+<td align="left"><code>divisorWhenUnfocused</code></td>
+<td align="left">Defines the number that will divide the current value shown when unfocused</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>emptyInputBehavior</code></td>
+<td align="left">Defines what to display when the input value is empty (possible options are <code>null</code>, <code>focus</code>, <code>press</code>, <code>always</code>, <code>min</code>, <code>max</code>, <code>zero</code>, number, or a string representing a number)</td>
+<td align="left"><code>'focus'</code></td>
+</tr>
+<tr>
+<td align="left"><code>eventBubbles</code></td>
+<td align="left">Defines if the custom and native events triggered by AutoNumeric should bubble up or not</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>eventIsCancelable</code></td>
+<td align="left">Defines if the custom and native events triggered by AutoNumeric should be cancelable</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>failOnUnknownOption</code></td>
+<td align="left">This option is the 'strict mode' <em>(aka 'debug' mode)</em>, which allows autoNumeric to strictly analyse the options passed, and fails if an unknown options is used in the <code>options</code> object.</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>formatOnPageLoad</code></td>
+<td align="left">Determine if the default value will be formatted on initialization</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>formulaMode</code></td>
+<td align="left">Defines if the <a href="../formula%20mode/"><em>formula mode</em></a> can be activated by the user</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>historySize</code></td>
+<td align="left">Determine how many undo states an AutoNumeric object should keep in memory</td>
+<td align="left"><code>20</code></td>
+</tr>
+<tr>
+<td align="left"><code>isCancellable</code></td>
+<td align="left">Determine if the user can <em>'cancel'</em> the last modifications done to the element value when using the <code>Escape</code> key</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>leadingZero</code></td>
+<td align="left">Controls the leading zero behavior (possible options are <code>allow</code>, <code>deny</code> and <code>keep</code>)</td>
+<td align="left"><code>'deny'</code></td>
+</tr>
+<tr>
+<td align="left"><code>maximumValue</code></td>
+<td align="left">The maximum value that can be entered (10 trillions by default)</td>
+<td align="left"><code>'10000000000000'</code></td>
+</tr>
+<tr>
+<td align="left"><code>minimumValue</code></td>
+<td align="left">The minimum value that can be entered (-10 trillions by default)</td>
+<td align="left"><code>'-10000000000000'</code></td>
+</tr>
+<tr>
+<td align="left"><code>modifyValueOnUpDownArrow</code></td>
+<td align="left">Determine if the element value can be incremented / decremented with the up and down arrow keys. The keys behavior is modified with the <code>upDownStep</code> option.</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>modifyValueOnWheel</code></td>
+<td align="left">Determine if the element value can be incremented / decremented with the mouse wheel. The wheel behavior is modified with the <code>wheelStep</code> option.</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>negativeBracketsTypeOnBlur</code></td>
+<td align="left">Adds brackets <code>[]</code>, parenthesis <code>()</code>, curly braces <code>{}</code>, chevrons <code>&lt;&gt;</code>, angle brackets <code>〈〉</code>, Japanese quotation marks <code>｢｣</code>, half brackets <code>⸤⸥</code>, white square brackets <code>⟦⟧</code>, quotation marks <code>‹›</code> or guillemets <code>«»</code> on negative values when unfocused. The value must be formatted like <code>'&lt;leftBracket&gt;,&lt;rightBracket&gt;'</code>.</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>negativePositiveSignBehavior</code></td>
+<td align="left">Defines if the negative sign should be toggled when hitting the negative or positive key multiple times</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>negativePositiveSignPlacement</code></td>
+<td align="left">Placement of negative/positive sign relative to the currency symbol (possible options are <code>l</code> (left), <code>r</code> (right), <code>p</code> (prefix) and <code>s</code> (suffix))</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>negativeSignCharacter</code></td>
+<td align="left">Defines the negative sign character to use</td>
+<td align="left"><code>'-'</code></td>
+</tr>
+<tr>
+<td align="left"><code>noEventListeners</code></td>
+<td align="left">Defines if the element should have event listeners activated on it.<br><em>Note: Setting this to <code>true</code> will prevent any format to be applied once the user starts modifying the element value. This is unlikely what you want.</em></td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>onInvalidPaste</code></td>
+<td align="left">Manage how autoNumeric react when the user tries to paste an invalid number (possible options are <code>error</code>, <code>ignore</code>, <code>clamp</code>, <code>truncate</code> or <code>replace</code>)</td>
+<td align="left"><code>'error'</code></td>
+</tr>
+<tr>
+<td align="left"><code>outputFormat</code></td>
+<td align="left">Defines the localized output format of the <code>getLocalized</code>, <code>form*</code>, <code>formArray*</code> and <code>formJson*</code> methods</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>overrideMinMaxLimits</code></td>
+<td align="left">Override minimum and maximum limits (possible options are <code>ceiling</code>, <code>floor</code>, <code>ignore</code> and <code>invalid</code>)</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>positiveSignCharacter</code></td>
+<td align="left">Defines the positive sign character to use (Note: It's only shown if <code>showPositiveSign</code> is set to <code>true</code>)</td>
+<td align="left"><code>'+'</code></td>
+</tr>
+<tr>
+<td align="left"><code>rawValueDivisor</code></td>
+<td align="left">Define the number that will divide the formatted value into the raw value (i.e. when displaying <code>'1.23%'</code>, the raw value kept is <code>0.0123</code> if <code>rawValueDivisor</code> is set to <code>100</code>)</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>readOnly</code></td>
+<td align="left">Defines if the element (<code>&lt;input&gt;</code> or another allowed html tag) should be set as read-only on initialization</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>roundingMethod</code></td>
+<td align="left">Method used for rounding. The possible options are:<br><code>S</code> (Round-Half-Up Symmetric (default)),<br><code>A</code> (Round-Half-Up Asymmetric),<br><code>s</code> (Round-Half-Down Symmetric (lower case s)),<br><code>a</code> (Round-Half-Down Asymmetric (lower case a)),<br><code>B</code> (Round-Half-Even 'Bankers Rounding'),<br><code>U</code> (Round Up 'Round-Away-From-Zero'),<br><code>D</code> (Round Down 'Round-Toward-Zero' - same as truncate),<br><code>C</code> (Round to Ceiling 'Toward Positive Infinity'),<br><code>F</code> (Round to Floor 'Toward Negative Infinity'),<br><code>N05</code> (Rounds to the nearest .05 (same as <code>'CHF'</code> used in v1.9.* and still valid)),<br><code>U05</code> (Rounds up to next .05),<br><code>D05</code> (Rounds down to next .05)</td>
+<td align="left"><code>'S'</code></td>
+</tr>
+<tr>
+<td align="left"><code>saveValueToSessionStorage</code></td>
+<td align="left">Allow the <code>decimalPlacesShownOnFocus</code> value to be saved into session storage</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>selectNumberOnly</code></td>
+<td align="left">Determine if the 'Select All' keyboard command will select the complete input text content (including the currency symbol and suffix text), or only the input numeric value</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>selectOnFocus</code></td>
+<td align="left">Defines if the element value should be selected on focus. That selection is dependent on the <code>selectNumberOnly</code> option value.</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>serializeSpaces</code></td>
+<td align="left">Defines how the serialize functions should treat spaces when serializing (convert them to <code>'%20'</code> or <code>'+'</code>)</td>
+<td align="left"><code>'+'</code></td>
+</tr>
+<tr>
+<td align="left"><code>showOnlyNumbersOnFocus</code></td>
+<td align="left">Remove the thousand separator, currency symbol and suffix on focus</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>showPositiveSign</code></td>
+<td align="left">Allow the positive sign symbol <code>+</code> to be displayed for positive numbers</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>showWarnings</code></td>
+<td align="left">Defines if warnings should be shown. This is safe to disable in production.</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>styleRules</code></td>
+<td align="left">Defines the rules that calculate the CSS class(es) to apply on the element, based on the raw unformatted value.<br><strong>This can also be used to call callbacks whenever the <code>rawValue</code> is updated</strong>.</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>suffixText</code></td>
+<td align="left">Additional text suffix that is added after the number</td>
+<td align="left"><code>''</code></td>
+</tr>
+<tr>
+<td align="left"><code>symbolWhenUnfocused</code></td>
+<td align="left">Symbol placed as a suffix when unfocused. This is used in combination with the <code>divisorWhenUnfocused</code> option.</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>unformatOnHover</code></td>
+<td align="left">Defines if the element value should be unformatted when the user hover his mouse over it while holding the <code>Alt</code> key</td>
+<td align="left"><code>true</code></td>
+</tr>
+<tr>
+<td align="left"><code>unformatOnSubmit</code></td>
+<td align="left">Removes formatting on submit event</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>upDownStep</code></td>
+<td align="left">Used in conjonction with the <code>modifyValueOnUpDownArrow</code> option, this allows to either define a <em>fixed</em> step (i.e. <code>1000</code>), or a <em>progressive</em> one that is calculated based on the size of the current value</td>
+<td align="left"><code>'1'</code></td>
+</tr>
+<tr>
+<td align="left"><code>valuesToStrings</code></td>
+<td align="left">Provide a way for automatically and transparently replacing the formatted value with a pre-defined string, when the raw value is equal to a specific value.<br>For instance when using <code>{ 0: '-' }</code>, the hyphen <code>'-'</code> is displayed when the <code>rawValue</code> is equal to <code>0</code>. Multiple 'replacements' can be defined.</td>
+<td align="left"><code>null</code></td>
+</tr>
+<tr>
+<td align="left"><code>watchExternalChanges</code></td>
+<td align="left">Defines if the AutoNumeric element should watch (and format) external changes made without using <code>.set()</code>. This is set to <code>false</code> by default to prevent infinite loops when used with third party frameworks that relies on the <code>'autoNumeric:rawValueModified'</code> events being sent.</td>
+<td align="left"><code>false</code></td>
+</tr>
+<tr>
+<td align="left"><code>wheelOn</code></td>
+<td align="left">Used in conjonction with the <code>modifyValueOnWheel</code> option, defines when the wheel event will increment or decrement the element value, either when the element is focused, or hovered</td>
+<td align="left"><code>'focus'</code></td>
+</tr>
+<tr>
+<td align="left"><code>wheelStep</code></td>
+<td align="left">Used in conjonction with the <code>modifyValueOnWheel</code> option, this allows to either define a <em>fixed</em> step (i.e. <code>1000</code>), or a <em>progressive</em> one that is calculated based on the size of the current value</td>
+<td align="left"><code>'progressive'</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Made with ❤ in France
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>

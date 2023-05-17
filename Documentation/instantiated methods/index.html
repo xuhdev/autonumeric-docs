@@ -1,0 +1,2081 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official AutoNumeric documentation">
+      
+      
+        <meta name="author" content="Alexandre Bonneau">
+      
+      
+        <link rel="canonical" href="https://docs.autonumeric.org/Documentation/instantiated%20methods/">
+      
+      
+        <link rel="prev" href="../methods/">
+      
+      
+        <link rel="next" href="../static%20methods/">
+      
+      <link rel="icon" href="../../assets/favicon-32x32.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>Instantiated methods - AutoNumeric.js</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usual-autonumeric-functions-like-set-get-format-and-unformat" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AutoNumeric.js" class="md-header__button md-logo" aria-label="AutoNumeric.js" data-md-component="logo">
+      
+  <img src="../../assets/logo_AutoNumeric_152x152.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AutoNumeric.js
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instantiated methods
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/autoNumeric/autoNumeric/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    autoNumeric/autoNumeric
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        User documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Developer%20guide/how%20to%20contribute/" class="md-tabs__link">
+        Developer guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../support/" class="md-tabs__link">
+        Support
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../Changelog/CHANGELOG/" class="md-tabs__link">
+      Changelog
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../About/about/" class="md-tabs__link">
+        About
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AutoNumeric.js" class="md-nav__button md-logo" aria-label="AutoNumeric.js" data-md-component="logo">
+      
+  <img src="../../assets/logo_AutoNumeric_152x152.png" alt="logo">
+
+    </a>
+    AutoNumeric.js
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/autoNumeric/autoNumeric/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    autoNumeric/autoNumeric
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          User documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          User documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        AutoNumeric.js documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo/" class="md-nav__link">
+        Try AutoNumeric
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how%20to%20use/" class="md-nav__link">
+        How to use?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../on%20which%20elements%20can%20it%20be%20used/" class="md-nav__link">
+        On which elements can it be used?
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../initialization/" class="md-nav__link">
+        Initialization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          Options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Options
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration%20options/" class="md-nav__link">
+        Configuration options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../predefined%20options/" class="md-nav__link">
+        Predefined options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../special%20options/" class="md-nav__link">
+        Special options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updating%20options/" class="md-nav__link">
+        Updating existing options
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+          Methods
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Methods
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methods/" class="md-nav__link">
+        Accessing the methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Instantiated methods
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Instantiated methods
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usual-autonumeric-functions-like-set-get-format-and-unformat" class="md-nav__link">
+    Usual AutoNumeric functions like set, get, format and unformat
+  </a>
+  
+    <nav class="md-nav" aria-label="Usual AutoNumeric functions like set, get, format and unformat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    Get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    Formatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-and-miscellaneous" class="md-nav__link">
+    Selection and miscellaneous
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-callback-functions-with-get-methods" class="md-nav__link">
+    Using callback functions with get* methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-initialize-the-autonumeric-element" class="md-nav__link">
+    Un-initialize the AutoNumeric element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-manipulation" class="md-nav__link">
+    Node manipulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-and-unformat-other-numbers-or-dom-elements-with-an-existing-autonumeric-element" class="md-nav__link">
+    Format and unformat other numbers or DOM elements with an existing AutoNumeric element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-other-dom-elements" class="md-nav__link">
+    Initialize other DOM Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-actions-globally-on-a-shared-init-list-of-autonumeric-elements" class="md-nav__link">
+    Perform actions globally on a shared 'init' list of AutoNumeric elements
+  </a>
+  
+    <nav class="md-nav" aria-label="Perform actions globally on a shared 'init' list of AutoNumeric elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-that-affects-the-auotnumeric-elements" class="md-nav__link">
+    Functions that affects the AuotNumeric elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions-that-affects-the-init-list" class="md-nav__link">
+    Functions that affects the init-list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-callback-functions-with-globalget-methods" class="md-nav__link">
+    Using callback functions with global.get* methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form-functions" class="md-nav__link">
+    Form functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Form functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-and-manipulate-the-form-values" class="md-nav__link">
+    Access and manipulate the form values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submit-the-form-values" class="md-nav__link">
+    Submit the form values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-chaining" class="md-nav__link">
+    Function chaining
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static%20methods/" class="md-nav__link">
+        Static methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formula%20mode/" class="md-nav__link">
+        Formula mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event%20lifecycle/" class="md-nav__link">
+        Event lifecycle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+          Old versions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_9">
+          <span class="md-nav__icon md-icon"></span>
+          Old versions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Old%20documentation/deprecated%20documentation/" class="md-nav__link">
+        Deprecated documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Old%20documentation/v1.9%20documentation/" class="md-nav__link">
+        v1.9 documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Old%20documentation/v2.0%20documentation/" class="md-nav__link">
+        v2.0 documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Developer guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Developer guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer%20guide/how%20to%20contribute/" class="md-nav__link">
+        How to contribute?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer%20guide/how%20to%20upgrade%20to%20v4/" class="md-nav__link">
+        How to upgrade to v4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer%20guide/dependencies/" class="md-nav__link">
+        Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../related%20projects/" class="md-nav__link">
+        Related projects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../older%20versions/" class="md-nav__link">
+        Older versions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Changelog/CHANGELOG/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          License
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          License
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/license/" class="md-nav__link">
+        Public license
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/documention%20license/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usual-autonumeric-functions-like-set-get-format-and-unformat" class="md-nav__link">
+    Usual AutoNumeric functions like set, get, format and unformat
+  </a>
+  
+    <nav class="md-nav" aria-label="Usual AutoNumeric functions like set, get, format and unformat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    Get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    Formatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-and-miscellaneous" class="md-nav__link">
+    Selection and miscellaneous
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-callback-functions-with-get-methods" class="md-nav__link">
+    Using callback functions with get* methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-initialize-the-autonumeric-element" class="md-nav__link">
+    Un-initialize the AutoNumeric element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-manipulation" class="md-nav__link">
+    Node manipulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-and-unformat-other-numbers-or-dom-elements-with-an-existing-autonumeric-element" class="md-nav__link">
+    Format and unformat other numbers or DOM elements with an existing AutoNumeric element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-other-dom-elements" class="md-nav__link">
+    Initialize other DOM Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-actions-globally-on-a-shared-init-list-of-autonumeric-elements" class="md-nav__link">
+    Perform actions globally on a shared 'init' list of AutoNumeric elements
+  </a>
+  
+    <nav class="md-nav" aria-label="Perform actions globally on a shared 'init' list of AutoNumeric elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-that-affects-the-auotnumeric-elements" class="md-nav__link">
+    Functions that affects the AuotNumeric elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions-that-affects-the-init-list" class="md-nav__link">
+    Functions that affects the init-list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-callback-functions-with-globalget-methods" class="md-nav__link">
+    Using callback functions with global.get* methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form-functions" class="md-nav__link">
+    Form functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Form functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-and-manipulate-the-form-values" class="md-nav__link">
+    Access and manipulate the form values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submit-the-form-values" class="md-nav__link">
+    Submit the form values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-chaining" class="md-nav__link">
+    Function chaining
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Instantiated methods</h1>
+
+<h2 id="usual-autonumeric-functions-like-set-get-format-and-unformat">Usual AutoNumeric functions like <code>set</code>, <code>get</code>, <code>format</code> and <code>unformat</code></h2>
+<p>The main functions for using AutoNumeric are <code>set()</code> which allows you to set the numeric raw value of an input (AutoNumeric will then automatically format it as per the options you used), and <code>get*</code> which allows you to retrieve the value of an input, either formatted or by getting the raw value directly.</p>
+<p>The following functions are available on all AutoNumeric-managed elements:</p>
+<h3 id="set">Set</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>set</code></td>
+<td align="left">Set the value (that will be formatted immediately)</td>
+<td align="left"><code>anElement.set(42.76);</code></td>
+</tr>
+<tr>
+<td align="left"><code>set</code></td>
+<td align="left">Set the value and update the setting in one go</td>
+<td align="left"><code>anElement.set(42.76, { options });</code></td>
+</tr>
+<tr>
+<td align="left"><code>set</code></td>
+<td align="left">Set the value, but do not save the new state in the history table (used for undo/redo actions)</td>
+<td align="left"><code>anElement.set(42.76, { options }, false);</code></td>
+</tr>
+<tr>
+<td align="left"><code>setUnformatted</code></td>
+<td align="left">Set the value (that will not be formatted immediately)</td>
+<td align="left"><code>anElement.setUnformatted(42.76);</code></td>
+</tr>
+<tr>
+<td align="left"><code>setUnformatted</code></td>
+<td align="left">Set the value and update the setting in one go (the value will not be formatted immediately)</td>
+<td align="left"><code>anElement.setUnformatted(42.76, { options });</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get">Get</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>getNumericString</code></td>
+<td align="left">Return the unformatted number as a string</td>
+<td align="left"><code>anElement.getNumericString();</code></td>
+</tr>
+<tr>
+<td align="left"><code>get</code></td>
+<td align="left">Alias for the <code>.getNumericString()</code> method (<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:" /> this is <em>deprecated</em> and will be removed soon™)</td>
+<td align="left"><code>anElement.get();</code></td>
+</tr>
+<tr>
+<td align="left"><code>getFormatted</code></td>
+<td align="left">Return the formatted string</td>
+<td align="left"><code>anElement.getFormatted();</code></td>
+</tr>
+<tr>
+<td align="left"><code>getNumber</code></td>
+<td align="left">Return the unformatted number as a number (<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:" /> <strong>Warning</strong>: If you are manipulating a number bigger than <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER"><code>Number.MAX_SAFE_INTEGER</code></a>, you <strong>will</strong> encounter problems if you try to retrieve it as a number and not as a string)</td>
+<td align="left"><code>anElement.getNumber();</code></td>
+</tr>
+<tr>
+<td align="left"><code>getLocalized</code></td>
+<td align="left">Return the localized unformatted number as a string</td>
+<td align="left"><code>anElement.getLocalized();</code></td>
+</tr>
+<tr>
+<td align="left"><code>getLocalized</code></td>
+<td align="left">Return the localized unformatted number as a string, using the <code>outputFormat</code> option override passed as a parameter</td>
+<td align="left"><code>anElement.getLocalized(forcedOutputFormat);</code></td>
+</tr>
+<tr>
+<td align="left"><code>getLocalized</code></td>
+<td align="left">Idem above, but with a callback function and a forced <code>outputFormat</code></td>
+<td align="left"><code>anElement.getLocalized(forcedOutputFormat, callback);</code></td>
+</tr>
+<tr>
+<td align="left"><code>getLocalized</code></td>
+<td align="left">Idem above, but with a callback function</td>
+<td align="left"><code>anElement.getLocalized(callback);</code></td>
+</tr>
+<tr>
+<td align="left"><code>get*</code></td>
+<td align="left">Pass the result of the <code>get*</code> function to the given callback, see <a href="#using-callback-functions-with-get-methods">here</a></td>
+<td align="left"><code>anElement.get*(funcCallback);</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatting">Formatting</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>reformat</code></td>
+<td align="left">Force the element to reformat its value again (in case the formatting has been lost)</td>
+<td align="left"><code>anElement.reformat();</code></td>
+</tr>
+<tr>
+<td align="left"><code>unformat</code></td>
+<td align="left">Remove the formatting and keep only the raw unformatted value in the element (as a numeric string)</td>
+<td align="left"><code>anElement.unformat();</code></td>
+</tr>
+<tr>
+<td align="left"><code>unformatLocalized</code></td>
+<td align="left">Remove the formatting and keep only the localized unformatted value in the element</td>
+<td align="left"><code>anElement.unformatLocalized();</code></td>
+</tr>
+<tr>
+<td align="left"><code>unformatLocalized</code></td>
+<td align="left">Idem above, but using the <code>outputFormat</code> option override passed as a parameter</td>
+<td align="left"><code>anElement.unformatLocalized(forcedOutputFormat);</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="selection-and-miscellaneous">Selection and miscellaneous</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>select</code></td>
+<td align="left">Select the formatted element content, based on the <code>selectNumberOnly</code> option</td>
+<td align="left"><code>anElement.select();</code></td>
+</tr>
+<tr>
+<td align="left"><code>selectNumber</code></td>
+<td align="left">Select only the numbers in the formatted element content, leaving out the currency symbol, whatever the value of the <code>selectNumberOnly</code> option</td>
+<td align="left"><code>anElement.selectNumber();</code></td>
+</tr>
+<tr>
+<td align="left"><code>selectInteger</code></td>
+<td align="left">Select only the integer part in the formatted element content, whatever the value of <code>selectNumberOnly</code></td>
+<td align="left"><code>anElement.selectInteger();</code></td>
+</tr>
+<tr>
+<td align="left"><code>selectDecimal</code></td>
+<td align="left">Select only the decimal part in the formatted element content, whatever the value of <code>selectNumberOnly</code></td>
+<td align="left"><code>anElement.selectDecimal();</code></td>
+</tr>
+<tr>
+<td align="left"><code>clear</code></td>
+<td align="left">Reset the element value to the empty string <code>''</code> (or the currency sign, depending on the <code>emptyInputBehavior</code> option value)</td>
+<td align="left"><code>anElement.clear();</code></td>
+</tr>
+<tr>
+<td align="left"><code>clear</code></td>
+<td align="left">Always reset the element value to the empty string <code>''</code> as above, no matter the <code>emptyInputBehavior</code> option value</td>
+<td align="left"><code>anElement.clear(true);</code></td>
+</tr>
+<tr>
+<td align="left"><code>isPristine</code></td>
+<td align="left">Return <code>true</code> if the current value is the same as when the element first got <em>initialized</em> (not <code>set()</code>)</td>
+<td align="left"><code>anElement.isPristine();</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Most of those functions can be <a href="#function-chaining">chained</a> together, if needed.</p>
+</div>
+<h3 id="using-callback-functions-with-get-methods">Using callback functions with <code>get*</code> methods</h3>
+<p>All <code>get*</code> methods can accept a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">callback function</a> as its argument (those methods being <code>get</code>, <code>getNumericString</code>, <code>getFormatted</code>, <code>getNumber</code> and <code>getLocalized</code>; see <a href="#get">here</a>).</p>
+<p>That callback is passed two parameters, the result of the <code>get*</code> method as its first argument, and the AutoNumeric object as its second.</p>
+<p>This allows you to directly use the result of the <code>get*</code> functions without having to declare a temporary variable like so:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">sendToServer</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nx">ajax</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`The value </span><span class="si">${</span><span class="nx">anElement</span><span class="p">.</span><span class="nx">getNumber</span><span class="p">(</span><span class="nx">sendToServer</span><span class="p">)</span><span class="si">}</span><span class="sb"> has been sent to the server.`</span><span class="p">);</span>
+</code></pre></div></p>
+<p>In other words,
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Using:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">anElement</span><span class="p">.</span><span class="nx">getNumericString</span><span class="p">(</span><span class="nx">funcCallback</span><span class="p">);</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Is equivalent to doing:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">anElement</span><span class="p">.</span><span class="nx">getNumericString</span><span class="p">();</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nx">funcCallback</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">anElement</span><span class="p">);</span>
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The callback function behavior is slightly different when called on <a href="#using-callback-functions-with-globalget-methods">multiple elements</a> via <code>global.get*</code> methods.</p>
+</div>
+<h2 id="un-initialize-the-autonumeric-element">Un-initialize the AutoNumeric element</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>remove</code></td>
+<td align="left">Remove the AutoNumeric listeners from the element (previous name : <code>'destroy'</code>). Keep the element content intact.</td>
+<td align="left"><code>anElement.remove();</code></td>
+</tr>
+<tr>
+<td align="left"><code>wipe</code></td>
+<td align="left">Remove the AutoNumeric listeners from the element, and reset its value to <code>''</code></td>
+<td align="left"><code>anElement.wipe();</code></td>
+</tr>
+<tr>
+<td align="left"><code>nuke</code></td>
+<td align="left">Remove the AutoNumeric listeners from the element, then delete the DOM element altogether</td>
+<td align="left"><code>anElement.nuke();</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="node-manipulation">Node manipulation</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>node</code></td>
+<td align="left">Return the DOM element reference of the AutoNumeric-managed element</td>
+<td align="left"><code>anElement.node();</code></td>
+</tr>
+<tr>
+<td align="left"><code>parent</code></td>
+<td align="left">Return the DOM element reference of the parent node of the AutoNumeric-managed element</td>
+<td align="left"><code>anElement.parent();</code></td>
+</tr>
+<tr>
+<td align="left"><code>detach</code></td>
+<td align="left">Detach the current AutoNumeric element from the shared local <a href="#perform-actions-globally-on-a-shared-init-list-of-autonumeric-elements"><em>'init' list</em></a> (which means any changes made on that local shared list will not be transmitted to that element anymore)</td>
+<td align="left"><code>anElement.detach();</code></td>
+</tr>
+<tr>
+<td align="left"><code>detach</code></td>
+<td align="left">Idem above, but detach the given AutoNumeric element, not the current one</td>
+<td align="left"><code>anElement.detach(otherAnElement);</code></td>
+</tr>
+<tr>
+<td align="left"><code>attach</code></td>
+<td align="left">Attach the given AutoNumeric element to the shared local <a href="#perform-actions-globally-on-a-shared-init-list-of-autonumeric-elements"><em>'init' list</em></a>. When doing that, by default the DOM content is left untouched. The user can force a reformat with the new shared list options by passing a second argument valued <code>true</code>.</td>
+<td align="left"><code>anElement.attach(otherAnElement, reFormat = true);</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="format-and-unformat-other-numbers-or-dom-elements-with-an-existing-autonumeric-element">Format and unformat other numbers or DOM elements with an existing AutoNumeric element</h2>
+<p>You can use any AutoNumeric element to format or unformat other numbers or DOM elements.</p>
+<p>This allows to format or unformat numbers, strings or directly other DOM elements without having to specify the options each time, since the current AutoNumeric object already has those settings set.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>formatOther</code></td>
+<td align="left">This use the same function signature that when using the static AutoNumeric method directly (cf. <a href="../static%20methods/#formatting"><code>AutoNumeric.format</code></a>), but without having to pass the options</td>
+<td align="left"><code>anElement.formatOther(12345, { options });</code></td>
+</tr>
+<tr>
+<td align="left"><code>formatOther</code></td>
+<td align="left">Idem above, but apply the formatting to the given DOM element by modifying its content directly</td>
+<td align="left"><code>anElement.formatOther(domElement, { options });</code></td>
+</tr>
+<tr>
+<td align="left"><code>unformatOther</code></td>
+<td align="left">This use the same function signature that when using the static AutoNumeric method directly (cf. <a href="../static%20methods/#formatting"><code>AutoNumeric.unformat</code></a>), but without having to pass the options</td>
+<td align="left"><code>anElement.unformatOther('1.234,56 €', { options });</code></td>
+</tr>
+<tr>
+<td align="left"><code>unformatOther</code></td>
+<td align="left">Idem above, but apply the unformatting to the given DOM element by modifying its content directly</td>
+<td align="left"><code>anElement.unformatOther(domElement, { options });</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="initialize-other-dom-elements">Initialize other DOM Elements</h2>
+<p>Once you have an AutoNumeric element already setup correctly with the right options, you can use it as many times you want to initialize as many other DOM elements as needed.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This works only on elements that can be managed by AutoNumeric.<br>You can check the list of supported elements <a href="../on which elements can it be used/#on-other-dom-elements">here</a>.</p>
+</div>
+<p>Whenever <code>init</code> is used to initialize other DOM elements, a shared local <a href="#perform-actions-globally-on-a-shared-init-list-of-autonumeric-elements"><em>'init' list</em></a> of those elements is stored in the AutoNumeric objects.<br>This allows for neat things like modifying all those <em>linked</em> AutoNumeric elements globally, with only one call.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>init</code></td>
+<td align="left">Use an existing AutoNumeric element to initialize another single DOM element with the same options</td>
+<td align="left"><code>const anElement2 = anElement.init(domElement2);</code></td>
+</tr>
+<tr>
+<td align="left"><code>init</code></td>
+<td align="left">If <code>true</code> is set as the second argument, then the newly generated AutoNumeric element will not share the same local element list as <code>anElement</code></td>
+<td align="left"><code>const anElement2 = anElement.init(domElement2, true);</code></td>
+</tr>
+<tr>
+<td align="left"><code>init</code></td>
+<td align="left">Use an existing AutoNumeric element to initialize multiple other DOM elements from an Array, with the same options</td>
+<td align="left"><code>const anElementsArray = anElement.init([domElement2, domElement3, domElement4]);</code></td>
+</tr>
+<tr>
+<td align="left"><code>init</code></td>
+<td align="left">Use an existing AutoNumeric element to initialize multiple other DOM elements from a CSS selector, with the same options</td>
+<td align="left"><code>const anElementsArray = anElement.init('.currency');</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="perform-actions-globally-on-a-shared-init-list-of-autonumeric-elements">Perform actions globally on a shared 'init' list of AutoNumeric elements</h2>
+<p>This local <em>'init' list</em> can be used to perform global operations on all those AutoNumeric elements, with <strong>one function call</strong>.<br></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The function names are the same as <a href="#usual-autonumeric-functions-like-set-get-format-and-unformat">the ones</a> that are used on a single AutoNumeric element.</p>
+<p>For instance instead of calling <code>anElement.set(42)</code> on a single element, you must call the function by prefixing <code>.global</code> before the method name like so: <code>anElement.global.set(42)</code>.</p>
+</div>
+<h3 id="functions-that-affects-the-auotnumeric-elements">Functions that affects the AuotNumeric elements</h3>
+<p>Below are listed all the supported methods than can be called globally:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">2000</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set the value 2000 in all the AutoNumeric-managed elements that are shared on this element</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">setUnformatted</span><span class="p">(</span><span class="mf">69</span><span class="p">);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">[</span><span class="nx">result1</span><span class="p">,</span><span class="w"> </span><span class="nx">result2</span><span class="p">,</span><span class="w"> </span><span class="nx">result3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return an array of results</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">[</span><span class="nx">result1</span><span class="p">,</span><span class="w"> </span><span class="nx">result2</span><span class="p">,</span><span class="w"> </span><span class="nx">result3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">getNumericString</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return an array of results</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">[</span><span class="nx">result1</span><span class="p">,</span><span class="w"> </span><span class="nx">result2</span><span class="p">,</span><span class="w"> </span><span class="nx">result3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">getFormatted</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return an array of results</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">[</span><span class="nx">result1</span><span class="p">,</span><span class="w"> </span><span class="nx">result2</span><span class="p">,</span><span class="w"> </span><span class="nx">result3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">getNumber</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return an array of results</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">[</span><span class="nx">result1</span><span class="p">,</span><span class="w"> </span><span class="nx">result2</span><span class="p">,</span><span class="w"> </span><span class="nx">result3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">getLocalized</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return an array of results</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">reformat</span><span class="p">();</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">unformat</span><span class="p">();</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">unformatLocalized</span><span class="p">();</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">unformatLocalized</span><span class="p">(</span><span class="nx">forcedOutputFormat</span><span class="p">);</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Update the settings of each AutoNumeric-managed elements</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">options1</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options2</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">options3</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Idem above, but accepts as many option objects as needed</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">isPristine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return `true` if *all* the AutoNumeric-managed elements are pristine, if their raw value hasn&#39;t changed</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">isPristine</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// Idem as above, but also checks that the formatted value hasn&#39;t changed</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span><span class="w"> </span><span class="c1">// Clear the value in all the AutoNumeric-managed elements that are shared on this element</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">wipe</span><span class="p">();</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">nuke</span><span class="p">();</span>
+</code></pre></div>
+<div class="admonition note">
+<p>Do note that the <code>.global.get*()</code> functions return an array of results, with one value for each AutoNumeric element in the linked list</p>
+</div>
+<h3 id="functions-that-affects-the-init-list">Functions that affects the init-list</h3>
+<p>The shared local list also provide <em>list-specific</em> methods to manipulate it:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">domElementOrAutoNumericObject</span><span class="p">);</span><span class="w"> </span><span class="c1">// Return `true` if the given AutoNumeric object (or DOM element) is in the local AutoNumeric element list</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">addObject</span><span class="p">(</span><span class="nx">domElementOrAutoNumericObject</span><span class="p">);</span><span class="w"> </span><span class="c1">// Add an existing AutoNumeric object (or DOM element) to the local AutoNumeric element list, using the DOM element as the key</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">removeObject</span><span class="p">(</span><span class="nx">domElementOrAutoNumericObject</span><span class="p">);</span><span class="w"> </span><span class="c1">// Remove the given AutoNumeric object (or DOM element) from the local AutoNumeric element list, using the DOM element as the key</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">removeObject</span><span class="p">(</span><span class="nx">domElementOrAutoNumericObject</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// Idem above, but keep the current AutoNumeric object in the local list if it&#39;s removed by itself</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">empty</span><span class="p">();</span><span class="w"> </span><span class="c1">// Remove all elements from the shared list, effectively emptying it</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">empty</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// Idem above, but instead of completely emptying the local list of each AutoNumeric objects, each one of those keeps itself in its own local list</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">[</span><span class="nx">anElement0</span><span class="p">,</span><span class="w"> </span><span class="nx">anElement1</span><span class="p">,</span><span class="w"> </span><span class="nx">anElement2</span><span class="p">,</span><span class="w"> </span><span class="nx">anElement3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">elements</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return an array containing all the AutoNumeric elements that have been initialized by each other</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">getList</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return the `Map` object directly</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">size</span><span class="p">();</span><span class="w"> </span><span class="c1">// Return the number of elements in the local AutoNumeric element list</span>
+</code></pre></div></p>
+<h3 id="using-callback-functions-with-globalget-methods">Using callback functions with <code>global.get*</code> methods</h3>
+<p>Like for their <code>get*</code> methods <a href="#using-callback-functions-with-get-methods">counterparts</a>, <code>global.get*</code> methods accepts a callback function.
+However, the callback is executed only <strong>once</strong> and is passed an array of the <code>get*</code> function results as its first argument, while the AutoNumeric object being passed as its second one.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Using:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">getNumericString</span><span class="p">(</span><span class="nx">funcCallback</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">// Is equivalent to doing:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">result1</span><span class="p">,</span><span class="w"> </span><span class="nx">result2</span><span class="p">,</span><span class="w"> </span><span class="nx">result3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">getNumericString</span><span class="p">();</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nx">funcCallback</span><span class="p">([</span><span class="nx">result1</span><span class="p">,</span><span class="w"> </span><span class="nx">result2</span><span class="p">,</span><span class="w"> </span><span class="nx">result3</span><span class="p">],</span><span class="w"> </span><span class="nx">anElement</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="form-functions">Form functions</h2>
+<p>AutoNumeric elements provide special functions to manipulate the <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms">form</a> they are a part of.
+Those special functions really work on the parent <code>&lt;form&gt;</code> element, instead of the <code>&lt;input&gt;</code> element itself.</p>
+<p>Form functions can be divided in two categories:</p>
+<ul>
+<li>Functions that manipulate the form values, and</li>
+<li>Functions that submit the form values to the server.</li>
+</ul>
+<h3 id="access-and-manipulate-the-form-values">Access and manipulate the form values</h3>
+<p>The functions below makes retrieving and preparing the form values easy. Those values can be formatted or not, and in any format you would want (<code>Array</code>, JSON, string, etc.).</p>
+<p>You can then decide how and when to send those form values to the server.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>form</code></td>
+<td align="left">Return a reference to the parent <code>&lt;form&gt;</code> element, <code>null</code> if it does not exist</td>
+<td align="left"><code>anElement.form();</code></td>
+</tr>
+<tr>
+<td align="left"><code>form(forcedSearch)</code></td>
+<td align="left">Idem above, but will force a new search for the parent <code>&lt;form&gt;</code> element, discarding any previously found one</td>
+<td align="left"><code>anElement.form(true);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formNumericString</code></td>
+<td align="left">Return a string in standard URL-encoded notation with the form input values being unformatted</td>
+<td align="left"><code>anElement.formNumericString();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formFormatted</code></td>
+<td align="left">Return a string in standard URL-encoded notation with the form input values being formatted</td>
+<td align="left"><code>anElement.formFormatted();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formLocalized</code></td>
+<td align="left">Return a string in standard URL-encoded notation with the form input values, with localized values</td>
+<td align="left"><code>anElement.formLocalized();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formLocalized(forcedOutputFormat)</code></td>
+<td align="left">Idem above, but with the possibility of overriding the <code>outputFormat</code> option</td>
+<td align="left"><code>anElement.formLocalized(forcedOutputFormat);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formArrayNumericString</code></td>
+<td align="left">Return an array containing an object for each form <code>&lt;input&gt;</code> element, with the values as numeric strings</td>
+<td align="left"><code>anElement.formArrayNumericString();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formArrayFormatted</code></td>
+<td align="left">Return an array containing an object for each form <code>&lt;input&gt;</code> element, with the values as formatted strings</td>
+<td align="left"><code>anElement.formArrayFormatted();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formArrayLocalized</code></td>
+<td align="left">Return an array containing an object for each form <code>&lt;input&gt;</code> element, with the values as localized numeric strings</td>
+<td align="left"><code>anElement.formArrayLocalized();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formArrayLocalized(forcedOutputFormat)</code></td>
+<td align="left">Idem above, but with the possibility of overriding the <code>outputFormat</code> option</td>
+<td align="left"><code>anElement.formArrayLocalized(forcedOutputFormat);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formJsonNumericString</code></td>
+<td align="left">Return a JSON string containing an object representing the form input values. This is based on the result of the <code>formArrayNumericString()</code> function.</td>
+<td align="left"><code>anElement.formJsonNumericString();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formJsonFormatted</code></td>
+<td align="left">Return a JSON string containing an object representing the form input values. This is based on the result of the <code>formArrayFormatted()</code> function.</td>
+<td align="left"><code>anElement.formJsonFormatted();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formJsonLocalized</code></td>
+<td align="left">Return a JSON string containing an object representing the form input values. This is based on the result of the <code>formArrayLocalized()</code> function.</td>
+<td align="left"><code>anElement.formJsonLocalized();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formJsonLocalized(forcedOutputFormat)</code></td>
+<td align="left">Idem above, but with the possibility of overriding the <code>outputFormat</code> option</td>
+<td align="left"><code>anElement.formJsonLocalized(forcedOutputFormat);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formUnformat</code></td>
+<td align="left">Unformat all the AutoNumeric-managed elements that are a child to the parent <form> element of this <code>anElement</code> input, to numeric strings</td>
+<td align="left"><code>anElement.formUnformat();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formUnformatLocalized</code></td>
+<td align="left">Unformat all the AutoNumeric-managed elements that are a child to the parent <form> element of this <code>anElement</code> input, to localized strings</td>
+<td align="left"><code>anElement.formUnformatLocalized();</code></td>
+</tr>
+<tr>
+<td align="left"><code>formReformat</code></td>
+<td align="left">Reformat all the AutoNumeric-managed elements that are a child to the parent <form> element of this <code>anElement</code> input</td>
+<td align="left"><code>anElement.formReformat();</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="submit-the-form-values">Submit the form values</h3>
+<p>Submitting the form values to the server can be done with a single AutoNumeric function call.
+Moreover, the functions below may take a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">callback</a>, giving you more control on what to do when submitting data to the server.</p>
+<p>The following functions can either take a callback, or not. If they don't, the default <code>form.submit()</code> function will be called.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>formSubmitNumericString(callback)</code></td>
+<td align="left">Run the <code>callback(value)</code> with <code>value</code> being equal to the result of <code>formNumericString()</code></td>
+<td align="left"><code>anElement.formSubmitNumericString(callback);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formSubmitFormatted(callback)</code></td>
+<td align="left">Run the <code>callback(value)</code> with <code>value</code> being equal to the result of <code>formFormatted()</code></td>
+<td align="left"><code>anElement.formSubmitFormatted(callback);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formSubmitLocalized(callback)</code></td>
+<td align="left">Run the <code>callback(value)</code> with <code>value</code> being equal to the result of <code>formLocalized()</code></td>
+<td align="left"><code>anElement.formSubmitLocalized(callback);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formSubmitLocalized(forcedOutputFormat, callback)</code></td>
+<td align="left">Idem above, but with the possibility of overriding the <code>outputFormat</code> option</td>
+<td align="left"><code>anElement.formSubmitLocalized(forcedOutputFormat, callback);</code></td>
+</tr>
+</tbody>
+</table>
+<p>For the following methods, the callback is mandatory:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Call example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>formSubmitArrayNumericString(callback)</code></td>
+<td align="left">Run the <code>callback(value)</code> with <code>value</code> being equal to the result of <code>formArrayNumericString()</code></td>
+<td align="left"><code>anElement.formSubmitArrayNumericString(callback);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formSubmitArrayFormatted(callback)</code></td>
+<td align="left">Run the <code>callback(value)</code> with <code>value</code> being equal to the result of <code>formArrayFormatted()</code></td>
+<td align="left"><code>anElement.formSubmitArrayFormatted(callback);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formSubmitArrayLocalized(callback, forcedOutputFormat)</code></td>
+<td align="left">Idem above, but with the possibility of overriding the <code>outputFormat</code> option</td>
+<td align="left"><code>anElement.formSubmitArrayLocalized(callback, forcedOutputFormat);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formSubmitJsonNumericString(callback)</code></td>
+<td align="left">Run the <code>callback(value)</code> with <code>value</code> being equal to the result of <code>formJsonNumericString()</code></td>
+<td align="left"><code>anElement.formSubmitJsonNumericString(callback);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formSubmitJsonFormatted(callback)</code></td>
+<td align="left">Run the <code>callback(value)</code> with <code>value</code> being equal to the result of <code>formJsonFormatted()</code></td>
+<td align="left"><code>anElement.formSubmitJsonFormatted(callback);</code></td>
+</tr>
+<tr>
+<td align="left"><code>formSubmitJsonLocalized(callback, forcedOutputFormat)</code></td>
+<td align="left">Idem above, but with the possibility of overriding the <code>outputFormat</code> option</td>
+<td align="left"><code>anElement.formSubmitJsonLocalized(callback, forcedOutputFormat);</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="function-chaining">Function chaining</h2>
+<p>Most of those instantiated functions can be chained which allow to be less verbose and more concise.</p>
+<div class="highlight"><span class="filename">Chaining on one element</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">anElement</span><span class="p">.</span><span class="nx">french</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">         </span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">42</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">         </span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="p">})</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">         </span><span class="p">.</span><span class="nx">formSubmitJsonNumericString</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">         </span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Chaining on multiple elements</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">anElement</span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">72</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">         </span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">         </span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">25</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">         </span><span class="p">.</span><span class="nb">global</span><span class="p">.</span><span class="nx">getNumericString</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="static-methods">Static methods</h2>
+<p>AutoNumeric also provide static functions on the AutoNumeric class. You can check those out in the <a href="../static%20methods/">next chapter</a>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Made with ❤ in France
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
